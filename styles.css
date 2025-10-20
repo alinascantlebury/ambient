@@ -1,0 +1,153 @@
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(to top right, rgba(104, 95, 14, 0.989), rgba(255, 255, 133, 0.776));
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+.glow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.circle {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(255, 245, 200, 0.95) 0%,
+            rgba(255, 235, 150, 0.6) 35%,
+            rgba(255, 220, 120, 0.1) 70%,
+            rgba(255, 210, 100, 0.0) 100%);
+    opacity: 0;
+    filter: blur(6px);
+    /* soft glow edge */
+    animation: glimmer 5s ease-in-out infinite;
+}
+
+/* Each circle will shimmer at a slightly different rhythm */
+.circle:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.circle:nth-child(3) {
+    animation-delay: 3s;
+}
+
+.circle:nth-child(4) {
+    animation-delay: 2s;
+}
+
+.circle:nth-child(5) {
+    animation-delay: 4s;
+}
+
+.circle:nth-child(6) {
+    animation-delay: 5s;
+}
+
+@keyframes glimmer {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+        filter: blur(8px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+        filter: blur(4px);
+    }
+}
+
+#a {
+    top: 1300px;
+    left: 800px
+}
+
+#b {
+    top: 200px;
+    left: 300px
+}
+
+#c {
+    top: 250px;
+    left: 1300px
+}
+
+#d {
+    top: 500px;
+    left: 700px
+}
+
+#f {
+    top: 306px;
+    left: 550px
+}
+#g {
+    top: 200px;
+    left: 1300px
+}
+#e {
+    top: 70px;
+    left: 1000px
+}
+
+.glow-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: cursive;
+    font-size: 5rem;
+    letter-spacing: 6px;
+    color: rgba(255, 248, 200, 0.9);
+    letter-spacing: -2px; 
+    text-shadow:
+      0 0 10px rgba(255, 240, 160, 0.8),
+      0 0 20px rgba(255, 230, 120, 0.8),
+      0 0 40px rgba(255, 220, 100, 0.7);
+    animation: glowPulse 9s ease-in-out infinite;
+    opacity: 0.7;
+  }
+  
+  @keyframes glowPulse {
+    0%, 100% {
+      text-shadow:
+        0 0 8px rgba(255, 240, 150, 0.8),
+        0 0 15px rgba(255, 230, 110, 0.7),
+        0 0 25px rgba(255, 200, 80, 0.5);
+      opacity: 0;
+    }
+    50% {
+      text-shadow:
+        0 0 15px rgba(255, 250, 180, 1),
+        0 0 40px rgba(255, 240, 120, 0.9),
+        0 0 60px rgba(255, 230, 90, 0.8);
+      opacity: 1;
+    }
+  }
+  
