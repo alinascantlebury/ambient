@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Downloads/Helvetica/Helvetica Bold Condensed"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ambient"
+	}
+}
