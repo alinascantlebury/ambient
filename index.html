@@ -9,9 +9,20 @@
 </head>
 
 <body>
-    <audio loop autoplay src="images/Autumn Ambient Music.mp3">
-        Your browser does not support the audio element.
-      </audio>
+    <audio id="bg-music" loop src="./images/music.mp3"></audio>
+
+    <script>
+      const music = document.getElementById('bg-music');
+    
+      setTimeout(() => {
+        music.play().catch(() => {
+          console.log('Autoplay blocked — waiting for user interaction');
+          document.addEventListener('click', () => {
+            music.play();
+          }, { once: true });
+        });
+      }, 2000);
+    </script>
     <img class="background " src="./images/nostalgia.png" alt="nostalgia background">
 
     <div class="glow-container">
